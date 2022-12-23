@@ -1,8 +1,8 @@
 % arara: xelatex
-\documentclass[12pt,b6paper]{book}
+\documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{fontspec,titling,ragged2e,tocloft}
+\usepackage{fontspec,titling,ragged2e,tocloft,changepage}
 
 \setlength{\cftbeforetoctitleskip}{1em}
 
@@ -11,6 +11,32 @@
 
 % Change TOC title
 \renewcommand{\contentsname}{Índice}
+
+% Macro: Indenting whole paragraph
+\newenvironment{indent1}{\begin{adjustwidth}{12pt}{}}{\end{adjustwidth}}
+\newenvironment{indent2}{\begin{adjustwidth}{24pt}{}}{\end{adjustwidth}}
+\newenvironment{indent3}{\begin{adjustwidth}{36pt}{}}{\end{adjustwidth}}
+
+% Add space to next line break
+\newcommand{\spacinga}{\\\vspace{1.5pt}}
+\newcommand{\spacingb}{\\\vspace{3pt}}
+\newcommand{\spacingc}{\\\vspace{9pt}}
+
+% Command for indenting line start
+\newcommand{\aspacing}{\vspace{1.5pt}}
+\newcommand{\bspacing}{\vspace{3pt}}
+\newcommand{\cspacing}{\vspace{9pt}}
+
+% Command for indenting next line
+\newcommand{\indenta}{\\\hspace*{12pt}}
+\newcommand{\indentb}{\\\hspace*{24pt}}
+\newcommand{\indentc}{\\\hspace*{36pt}}
+
+% Command for indenting line start
+\newcommand{\nindenta}{\hspace*{12pt}}
+\newcommand{\nindentb}{\hspace*{24pt}}
+\newcommand{\nindentc}{\hspace*{36pt}}
+
 
 % Macro: Sections
 %
@@ -23,11 +49,8 @@
 \subsection*{\normalfont\centering{#3}}
 \vspace{2pt}
 % Section Text
-	\begin{center}
-		\begin{tabular}{l}
-	#4
-		\end{tabular}
-	\end{center}
+\RaggedRight
+#4
 }
 
 
@@ -60,25 +83,11 @@
 % command
 }
 
-% Add space to next line break
-\newcommand{\spacing}{\\\vspace{1.5pt}}
-\newcommand{\spacingg}{\\\vspace{3pt}}
-\newcommand{\spacinggg}{\\\vspace{9pt}}
-
-% Command for indenting line start
-\newcommand{\sspacing}{\vspace{1.5pt}}
-\newcommand{\ssspacing}{\vspace{3pt}}
-\newcommand{\sssspacing}{\vspace{9pt}}
-
-% Command for indenting next line
-\newcommand{\indentt}{\\\hspace*{12pt}}
-\newcommand{\indenttt}{\\\hspace*{24pt}}
-\newcommand{\indentttt}{\\\hspace*{36pt}}
-
-% Command for indenting line start
-\newcommand{\nindentt}{\hspace*{12pt}}
-\newcommand{\nindenttt}{\hspace*{24pt}}
-\newcommand{\nindentttt}{\hspace*{36pt}}
+\newcommand{\commentfoot}[2]{
+\begin{center}
+{\textit{NOTA #1.- #2}}
+\end{center}
+}
 
 % Define page margins
 \usepackage{geometry}
@@ -134,71 +143,71 @@ Silencio, Nuit, O;Ra-Hoor-Khuit, Yo.}}
 \small{
 LA ANTEPRIMIGENIA TRÍADA QUE ES\\
 EL NO-DIOS
-\spacingg
+\spacingb
 Nada es.\\
 Nada se hace.\\
 Nada es no.
-\spacinggg
+\spacingc
 LA PRIMERA TRÍADA QUE ES EL DIOS
-\spacingg
+\spacingb
 Yo revelo la Palabra.\\
 Yo escucho la Palabra.
-\spacinggg
+\spacingc
 EL ABISMO
-\spacingg
+\spacingb
 La palabra se ha roto\\
 Sea el conocimiento.\\
 El conocimiento es la Narración.\\
 Estos fragmentos son Creación.\\
 La fisura manifiesta la luz.\footnote[2]{%
 Lo No Fragmentado, que todo lo integra, se llama Oscuridad.}
-\spacinggg
+\spacingc
 LA SEGUNDA TRÍADA QUE ES EL DIOS
-\spacingg
+\spacingb
 DIOS Padre y Madre, oculta en la Generación.\\
 DIOS oculto en la energía rotante de la Naturaleza.\\
 DIOS manifestado en el hacemiento: armonía:\\
 consideración: el espejo del Sol y del Corazón
-\spacinggg
+\spacingc
 LA TERCERA TRÍADA QUE ES EL DIOS
-\spacingg
+\spacingb
 Paciencia: preparación.\\
 Incertidumbre: fluyente, centelleante.\\
 Estabilidad: procreación.
-\spacinggg
+\spacingc
 LA DÉCIMA EMANACIÓN
-\spacingg
+\spacingb
 El Mundo.}}
 
 \newpage
 
 \comment{El Capitulo que no es un Capítulo}{
 Este capítulo, numerado con el 0, se corresponde con lo Negativo, lo
-que se halla antes de Kether en el sistema cabalístico.\indentt
+que se halla antes de Kether en el sistema cabalístico.\indenta
 La interrogación y la exclamación de las páginas anteriores son los
-otros dos velos.\indentt
+otros dos velos.\indenta
 El significado de estos símbolos se explica en su totalidad en «El
-Soldado y el Jorobado».\indentt
+Soldado y el Jorobado».\indenta
 Este capítulo comienza con la letra O, seguida de una exclamación; su
 remisión a la teogonía del «Libro de la Ley» se explica en una nota, pero
 también se refiere a KTEIS PHALLOS y SPERMA; es la exclamación que
 expresa la maravilla o el éxtasis, que son la naturaleza final de las cosas.
 }
 
-\sssspacing
+\cspacing
 
 \comment{La Antiprimigenia Tríada}{
 Esta es la Trinidad negativa; sus tres manifestaciones, son en última
 instancia, idénticas. Armonizan el Ser, el Devenir y el No-Ser. los tres
-modos de concebir el universo.\indentt
+modos de concebir el universo.\indenta
 La manifestación Nada es No, Técnicamente equivalente a Algo es,
-se explica ampliamente en el capítulo titulado Berashith.\indentt
+se explica ampliamente en el capítulo titulado Berashith.\indenta
 El resto del capítulo sigue el sistema Sefirótico de la Cábala, y
-constituye una suerte de comentario quintaesenciado de dicho sistema.\indentt
+constituye una suerte de comentario quintaesenciado de dicho sistema.\indenta
 Aquellos que estén familiarizados con el sistema reconocerán a
 Kether, Chokmah y Binah en la Primera Tríada; a Daath en el Abismo;
 a Chesed, Geburah y Tiphareth, en la Segunda Tríada; a Netzach, Hod y
-Yesod en la Tercera Tríada y a Malkuth en la Décima Emanación.\indentt
+Yesod en la Tercera Tríada y a Malkuth en la Décima Emanación.\indenta
 Se advertirá que esta cosmogonía es muy completa; incluso la
 manifestación de Dios no aparece hasta Tiphareth; y el universo mismo
 hasta Malkuth.
@@ -227,27 +236,27 @@ Ninguna de estas cosas solas es suficiente.
 
 \comment{A}{
 La forma del 1 sugiere el Falo; este capítulo se titula, así pues, El
-Sabbath del Chivo, el Sabbath de las Brujas, donde se adora el Falo.\indentt
+Sabbath del Chivo, el Sabbath de las Brujas, donde se adora el Falo.\indenta
 El capítulo comienza con la repetición de ¡O!, que remite al capítulo
 anterior. Se explica que esta tríada vive en la Noche, la Noche del Pan,
 llamada místicamente N.O.X., y esta O es la O de la palabra. La N es un
 símbolo del Tarot, la Muerte; y la X o Cruz es el signo del Falo. Para un
-comentario más exhaustivo sobre Nox, véase Liber VII, capítulo I.\indentt
+comentario más exhaustivo sobre Nox, véase Liber VII, capítulo I.\indenta
 Nox se agrega al 210, que simboliza la reducción de la dualidad a
 unidad, y de ahí la negatividad, y es, por lo tanto, un jeroglífico de la
-Gran Labor.\indentt
+Gran Labor.\indenta
 La palabra Pan se explica, Π, la letra de Marte, es un jeroglífico de dos
 pilares, que sugiere pues la dualidad; la A, por su forma, es el
 pentagrama, la energía; y la N, por sus atributos en el Tarot, es la
-muerte.\indentt
+muerte.\indenta
 Nox queda explicada, y ello muestra que la última Trinidad ¡O!, se
 sostiene, o alimenta, por el proceso de muerte y procreación, las leyes del
-universo.\indentt
-La identidad de ambas queda explicada.\indentt
+universo.\indenta
+La identidad de ambas queda explicada.\indenta
 El estudiante tiene en cargo la responsabilidad de comprender la
-importancia espiritual de este proceso físico en la línea 5.\indentt
+importancia espiritual de este proceso físico en la línea 5.\indenta
 Se acepta, pues, que la última letra A tiene dos nombres, o fases, Vida
-y Muerte.\indentt
+y Muerte.\indenta
 La línea 7 equilibra a la línea 5. Se advertirá que la fraseología de
 estas dos líneas es tan meditada que una contiene a la otra más que a sí
 misma.
@@ -259,19 +268,22 @@ misma.
 
 \seccion{2}{B}
 {EL GRITO DEL HALCÓN}{
-Hoor tenía un nombre secreto de cuatro palabras:\indentt
+Hoor tenía un nombre secreto de cuatro palabras:\indenta
 Haz lo que quieras\footnotemark[3].\\
-Cuatro Palabras: Cero-Uno-Mucho-Todo.\indenttt
-¡Tú, Niño!\indenttt
-Tu nombre es sagrado.\indenttt
-Tu Reino adviene.\indenttt
-Tu Voluntad se cumple.\indenttt
-Aquí está el Pan\indenttt
-Aquí está la Sangre.\indentt
-¡Dánoslo mediante la tentación!\indentt
+Cuatro Palabras: Cero-Uno-Mucho-Todo.
+\begin{indent2}
+¡Tú, Niño!\\
+Tu nombre es sagrado.\\
+Tu Reino adviene.\\
+Tu Voluntad se cumple.\\
+Aquí está el Pan\\
+Aquí está la Sangre.
+\end{indent2}
+\nindenta
+¡Dánoslo mediante la tentación!\indenta
 ¡Líbranos del Bien y del Mal!\\
-Sea tanto lo Tuyo como lo Mío la Corona del Reino,\indentt
-Incluso ahora.\indentttt
+Sea tanto lo Tuyo como lo Mío la Corona del Reino,\indenta
+Incluso ahora.\indentc
 ABRAHADABRA\\
 Estas diez palabras son cuatro, el Nombre del Uno.
 }
@@ -281,17 +293,17 @@ Estas diez palabras son cuatro, el Nombre del Uno.
 \newpage
 
 \comment{B}{
-El Halcón mencionado es Horus.\indentt
-El capítulo comienza con un comentario del Libro de la Ley, III, 49.\indentt
-Aquellas cuatro palabras, Haz Lo Que Quieras, se identifican\indentt
+El Halcón mencionado es Horus.\indenta
+El capítulo comienza con un comentario del Libro de la Ley, III, 49.\indenta
+Aquellas cuatro palabras, Haz Lo Que Quieras, se identifican\indenta
 también con los cuatro modos posibles de concebir el universo: Horus los
-une.\indentt
+une.\indenta
 Sigue una versión del Padrenuestro, adecuada a Horus. Compárese
 con la versión del capítulo 44. Hay diez partes en esta oración, y, como
 oración atribuida a Horus, son cuatro, como se ha explicado; pero es solo
-el nombre de Horus en cuatro palabras; Él mismo es Uno.\indentt
+el nombre de Horus en cuatro palabras; Él mismo es Uno.\indenta
 Puede compararse esto con la doctrina cabalística de los diez Sefirot,
-como expresión del Tetragrámaton (1 más 2 más 3 más 4 = 10).\indentt
+como expresión del Tetragrámaton (1 más 2 más 3 más 4 = 10).\indenta
 Se puede entender ahora que este Halcón no es solar sino mercurial;
 de ahí las palabras, El Grito del Halcón, la parte esencial de Mercurio es
 su Voz; y el número del capítulo, B, que es Beth, la letra de Mercurio, el
@@ -305,10 +317,24 @@ es la número 1, de nuevo en conexión todos estos símbolos con el Falo.
 
 \seccion{3}{Γ}
 {LA OSTRA}{
-	Los Hermanos de A .·. A.·. son uno con la Madre del Niño\footnotemark[4].\\
-	La Multitud es tan adorable para el Uno como el Uno lo es\indentt
-	para la multitud. He aquí el Amor de estos; el parto-creación es la Gloria
-	del Uno; el coito-disolución es la Gloria de la Multitud
+Los Hermanos de A .·. A.·. son uno con la Madre del Niño\footnotemark[4].\\
+La Multitud es tan adorable para el Uno como el Uno lo es
+\begin{indent1}
+para la Multitud. He aquí el Amor de estos; el parto-creación\\
+es la Gloria del Uno; el coito-disolución es la Gloria\\
+de la Multitud.
+\end{indent1}
+El Todo, así tramado de estos, es la Gloria.\\
+La Nada está más allá de la Gloria.\\
+El Hombre se deleita en la unión con la Mujer; la Mujer,\indenta
+en desprenderse del niño.\\
+Los Hermanos de A.·. A.·. son Mujeres; los aspirantes a\\
+A.·. A.·., hombres.
+}
+
+\newpage
+
+\commentfoot{4}{Ellos hacen que todos los hombres lo adoren.
 }
 
 \end{document}
