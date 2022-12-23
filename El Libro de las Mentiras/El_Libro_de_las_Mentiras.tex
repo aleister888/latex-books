@@ -1,0 +1,303 @@
+% arara: xelatex
+\documentclass[12pt,b6paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec,titling,ragged2e,tocloft}
+
+\setlength{\cftbeforetoctitleskip}{1em}
+
+% Only print section numbers on the TOC
+\setcounter{secnumdepth}{0}
+
+% Change TOC title
+\renewcommand{\contentsname}{Índice}
+
+% Macro: Sections
+%
+\newcommand{\seccion}[4]{%
+% Section Title
+\section*{\centering#1}
+\vspace{-8pt}
+\section[KEΦAΛH #2]{\centering{\Large{KEΦAΛH #2}}}
+\vspace{-8pt}
+\subsection*{\normalfont\centering{#3}}
+\vspace{2pt}
+% Section Text
+	\begin{center}
+		\begin{tabular}{l}
+	#4
+		\end{tabular}
+	\end{center}
+}
+
+
+
+% Macro: Comments
+%
+\newcommand{\comment}[2]{
+% Comment Title
+\subsection[\small COMENTARIO (#1)]{
+	\centering{\normalsize{\normalfont{
+		COMENTARIO (#1)
+}}}
+}
+% Comment Text
+\justifying
+\small{
+	\textit{
+\hspace{4pt} #2
+		}
+	}
+}
+
+\newcommand{\subcomment}[1]{
+\centering
+\small{
+	\textit{
+#1
+	}
+}
+% command
+}
+
+% Add space to next line break
+\newcommand{\spacing}{\\\vspace{1.5pt}}
+\newcommand{\spacingg}{\\\vspace{3pt}}
+\newcommand{\spacinggg}{\\\vspace{9pt}}
+
+% Command for indenting line start
+\newcommand{\sspacing}{\vspace{1.5pt}}
+\newcommand{\ssspacing}{\vspace{3pt}}
+\newcommand{\sssspacing}{\vspace{9pt}}
+
+% Command for indenting next line
+\newcommand{\indentt}{\\\hspace*{12pt}}
+\newcommand{\indenttt}{\\\hspace*{24pt}}
+\newcommand{\indentttt}{\\\hspace*{36pt}}
+
+% Command for indenting line start
+\newcommand{\nindentt}{\hspace*{12pt}}
+\newcommand{\nindenttt}{\hspace*{24pt}}
+\newcommand{\nindentttt}{\hspace*{36pt}}
+
+% Define page margins
+\usepackage{geometry}
+ \geometry{
+ a5paper,
+ left=20mm,
+ right=20mm,
+ top=15mm,
+ }
+
+% Set font
+\setmainfont{Linux Libertine}
+
+\usepackage[export]{adjustbox}
+
+% Define page style
+\usepackage[]{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+% Set title, date and author
+\title{\raggedright \fontsize{60pt}{50pt}\selectfont El Libro de las Mentiras}
+\date{}
+\author{}
+
+% Begin document
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\renewcommand{\headrulewidth}{0pt}
+\pagenumbering{arabic}
+
+\raggedright
+\normalsize{Mentiras Título original: The Book of Lies: Which is also Falsely Called BREAKS. The Wanderings or Falsifications of the One Thought of Frater Perdurabo, which Thought is itself Untrue. Liber CCCXXXIII [Book 333]}
+ info page
+
+\tableofcontents
+\addtocontents{toc}{\vspace{-1.25cm}}
+
+\newpage
+
+\cfoot{\thepage}
+
+\centering{%
+\section[KEΦAΛH 0]{KEΦAΛH H OϒK EΣTI KEΦAΛH}
+\vspace{-10pt}
+\subsection*{¡O!\footnote[1]{%
+Silencio, Nuit, O;Ra-Hoor-Khuit, Yo.}}
+
+\small{
+LA ANTEPRIMIGENIA TRÍADA QUE ES\\
+EL NO-DIOS
+\spacingg
+Nada es.\\
+Nada se hace.\\
+Nada es no.
+\spacinggg
+LA PRIMERA TRÍADA QUE ES EL DIOS
+\spacingg
+Yo revelo la Palabra.\\
+Yo escucho la Palabra.
+\spacinggg
+EL ABISMO
+\spacingg
+La palabra se ha roto\\
+Sea el conocimiento.\\
+El conocimiento es la Narración.\\
+Estos fragmentos son Creación.\\
+La fisura manifiesta la luz.\footnote[2]{%
+Lo No Fragmentado, que todo lo integra, se llama Oscuridad.}
+\spacinggg
+LA SEGUNDA TRÍADA QUE ES EL DIOS
+\spacingg
+DIOS Padre y Madre, oculta en la Generación.\\
+DIOS oculto en la energía rotante de la Naturaleza.\\
+DIOS manifestado en el hacemiento: armonía:\\
+consideración: el espejo del Sol y del Corazón
+\spacinggg
+LA TERCERA TRÍADA QUE ES EL DIOS
+\spacingg
+Paciencia: preparación.\\
+Incertidumbre: fluyente, centelleante.\\
+Estabilidad: procreación.
+\spacinggg
+LA DÉCIMA EMANACIÓN
+\spacingg
+El Mundo.}}
+
+\newpage
+
+\comment{El Capitulo que no es un Capítulo}{
+Este capítulo, numerado con el 0, se corresponde con lo Negativo, lo
+que se halla antes de Kether en el sistema cabalístico.\indentt
+La interrogación y la exclamación de las páginas anteriores son los
+otros dos velos.\indentt
+El significado de estos símbolos se explica en su totalidad en «El
+Soldado y el Jorobado».\indentt
+Este capítulo comienza con la letra O, seguida de una exclamación; su
+remisión a la teogonía del «Libro de la Ley» se explica en una nota, pero
+también se refiere a KTEIS PHALLOS y SPERMA; es la exclamación que
+expresa la maravilla o el éxtasis, que son la naturaleza final de las cosas.
+}
+
+\sssspacing
+
+\comment{La Antiprimigenia Tríada}{
+Esta es la Trinidad negativa; sus tres manifestaciones, son en última
+instancia, idénticas. Armonizan el Ser, el Devenir y el No-Ser. los tres
+modos de concebir el universo.\indentt
+La manifestación Nada es No, Técnicamente equivalente a Algo es,
+se explica ampliamente en el capítulo titulado Berashith.\indentt
+El resto del capítulo sigue el sistema Sefirótico de la Cábala, y
+constituye una suerte de comentario quintaesenciado de dicho sistema.\indentt
+Aquellos que estén familiarizados con el sistema reconocerán a
+Kether, Chokmah y Binah en la Primera Tríada; a Daath en el Abismo;
+a Chesed, Geburah y Tiphareth, en la Segunda Tríada; a Netzach, Hod y
+Yesod en la Tercera Tríada y a Malkuth en la Décima Emanación.\indentt
+Se advertirá que esta cosmogonía es muy completa; incluso la
+manifestación de Dios no aparece hasta Tiphareth; y el universo mismo
+hasta Malkuth.
+}
+
+\subcomment{
+El capítulo puede considerarse, por lo tanto, como el tratado sobre la
+existencia más completo que se haya escrito.
+}
+
+\newpage
+
+\seccion{1}{A}
+{EL SABBATH DEL CHIVO}{
+¡O!, el corazón de N.O.X, la Noche de Pan.\\
+ΠAN: Dualidad: Energía: Muerte.\\
+Muerte: Procreación: los valedores de ¡O!\\
+Procrear es morir: morir es procrear.\\
+Esparce la Semilla en el Campo de la Noche.\\
+La Vida y la Muerte son dos nombres de A.\\
+Mátame\\
+Ninguna de estas cosas solas es suficiente.
+}
+
+\newpage
+
+\comment{A}{
+La forma del 1 sugiere el Falo; este capítulo se titula, así pues, El
+Sabbath del Chivo, el Sabbath de las Brujas, donde se adora el Falo.\indentt
+El capítulo comienza con la repetición de ¡O!, que remite al capítulo
+anterior. Se explica que esta tríada vive en la Noche, la Noche del Pan,
+llamada místicamente N.O.X., y esta O es la O de la palabra. La N es un
+símbolo del Tarot, la Muerte; y la X o Cruz es el signo del Falo. Para un
+comentario más exhaustivo sobre Nox, véase Liber VII, capítulo I.\indentt
+Nox se agrega al 210, que simboliza la reducción de la dualidad a
+unidad, y de ahí la negatividad, y es, por lo tanto, un jeroglífico de la
+Gran Labor.\indentt
+La palabra Pan se explica, Π, la letra de Marte, es un jeroglífico de dos
+pilares, que sugiere pues la dualidad; la A, por su forma, es el
+pentagrama, la energía; y la N, por sus atributos en el Tarot, es la
+muerte.\indentt
+Nox queda explicada, y ello muestra que la última Trinidad ¡O!, se
+sostiene, o alimenta, por el proceso de muerte y procreación, las leyes del
+universo.\indentt
+La identidad de ambas queda explicada.\indentt
+El estudiante tiene en cargo la responsabilidad de comprender la
+importancia espiritual de este proceso físico en la línea 5.\indentt
+Se acepta, pues, que la última letra A tiene dos nombres, o fases, Vida
+y Muerte.\indentt
+La línea 7 equilibra a la línea 5. Se advertirá que la fraseología de
+estas dos líneas es tan meditada que una contiene a la otra más que a sí
+misma.
+}
+
+\subcomment{La línea 8 enfatiza la importancia de activar ambas}
+
+\newpage
+
+\seccion{1}{B}
+{EL GRITO DEL HALCÓN}{
+Hoor tenía un nombre secreto de cuatro palabras:\indentt
+Haz lo que quieras\footnotemark[3].\\
+Cuatro Palabras: Cero-Uno-Mucho-Todo.\indenttt
+¡Tú, Niño!\indenttt
+Tu nombre es sagrado.\indenttt
+Tu Reino adviene.\indenttt
+Tu Voluntad se cumple.\indenttt
+Aquí está el Pan\indenttt
+Aquí está la Sangre.\indentt
+¡Dánoslo mediante la tentación!\indentt
+¡Líbranos del Bien y del Mal!\\
+Sea tanto lo Tuyo como lo Mío la Corona del Reino,\indentt
+Incluso ahora.\indentttt
+ABRAHADABRA\\
+Estas diez palabras son cuatro, el Nombre del Uno.
+}
+
+\footnotetext[3]{Catorce letras. \textit{Quid Voles Illud Fac. Q.V.I.F. 196 = 14².}}
+
+\newpage
+
+\comment{B}{
+El Halcón mencionado es Horus.\indentt
+El capítulo comienza con un comentario del Libro de la Ley, III, 49.\indentt
+Aquellas cuatro palabras, Haz Lo Que Quieras, se identifican\indentt
+también con los cuatro modos posibles de concebir el universo: Horus los
+une.\indentt
+Sigue una versión del Padrenuestro, adecuada a Horus. Compárese
+con la versión del capítulo 44. Hay diez partes en esta oración, y, como
+oración atribuida a Horus, son cuatro, como se ha explicado; pero es solo
+el nombre de Horus en cuatro palabras; Él mismo es Uno.\indentt
+Puede compararse esto con la doctrina cabalística de los diez Sefirot,
+como expresión del Tetragrámaton (1 más 2 más 3 más 4 = 10).\indentt
+Se puede entender ahora que este Halcón no es solar sino mercurial;
+de ahí las palabras, El Grito del Halcón, la parte esencial de Mercurio es
+su Voz; y el número del capítulo, B, que es Beth, la letra de Mercurio, el
+Mago del Tarot que tiene cuatro armas. Debe recordarse que esta carta
+es la número 1, de nuevo en conexión todos estos símbolos con el Falo.
+}
+
+\subcomment{El arma esencial de Mercurio es Caduceo.}
+
+\end{document}
