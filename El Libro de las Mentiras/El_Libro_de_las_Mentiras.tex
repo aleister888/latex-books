@@ -1,31 +1,32 @@
 % arara: xelatex
-\documentclass[12pt]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document class and packages %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[8pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{fontspec,titling,ragged2e,tocloft,changepage}
+\usepackage{fontspec,titling,ragged2e,tocloft,changepage,xcolor}
 
-\setlength{\cftbeforetoctitleskip}{1em}
+%%%%%%%%%%
+% Macros %
+%%%%%%%%%%
 
-% Only print section numbers on the TOC
-\setcounter{secnumdepth}{0}
-
-% Change TOC title
-\renewcommand{\contentsname}{Índice}
-
-% Macro: Indenting whole paragraph
+% Macro: Indent multiple lines
 \newenvironment{indent1}{\begin{adjustwidth}{12pt}{}}{\end{adjustwidth}}
 \newenvironment{indent2}{\begin{adjustwidth}{24pt}{}}{\end{adjustwidth}}
 \newenvironment{indent3}{\begin{adjustwidth}{36pt}{}}{\end{adjustwidth}}
 
 % Add space to next line break
-\newcommand{\spacinga}{\\\vspace{1.5pt}}
-\newcommand{\spacingb}{\\\vspace{3pt}}
-\newcommand{\spacingc}{\\\vspace{9pt}}
+\newcommand{\spacinga}{\\\vspace{1pt}}
+\newcommand{\spacingb}{\\\vspace{2.5pt}}
+\newcommand{\spacingc}{\\\vspace{4pt}}
 
 % Command for indenting line start
-\newcommand{\aspacing}{\vspace{1.5pt}}
-\newcommand{\bspacing}{\vspace{3pt}}
-\newcommand{\cspacing}{\vspace{9pt}}
+\newcommand{\aspacing}{\vspace{0.5pt}}
+\newcommand{\bspacing}{\vspace{1.5pt}}
+\newcommand{\cspacing}{\vspace{2.5pt}}
 
 % Command for indenting next line
 \newcommand{\indenta}{\\\hspace*{12pt}}
@@ -37,65 +38,96 @@
 \newcommand{\nindentb}{\hspace*{24pt}}
 \newcommand{\nindentc}{\hspace*{36pt}}
 
+% "?" and "!" boxes
+\newcommand{\signbox}[1]{%
+\thispagestyle{empty}
 
-% Macro: Sections
-%
+\vspace*{\fill}
+\hspace{-25pt}
+{\color{gray}
+\centering
+\setlength{\fboxrule}{5pt}
+\framebox{\parbox{\textwidth}{\par\vspace{5.25cm}
+\hspace{\fill}
+\fontsize{50pt}{0pt}\selectfont \ #1
+\hspace{\fill}
+\par\vspace{5.25cm}}}}
+\vspace*{\fill}
+\newpage
+}
+
+% Sections
 \newcommand{\seccion}[4]{%
-% Section Title
+%	Section Title
 \section*{\centering#1}
 \vspace{-8pt}
 \section[KEΦAΛH #2]{\centering{\Large{KEΦAΛH #2}}}
 \vspace{-8pt}
 \subsection*{\normalfont\centering{#3}}
 \vspace{2pt}
-% Section Text
+%	Section Text
 \RaggedRight
 #4
 }
 
-
-
-% Macro: Comments
-%
+% Comments
 \newcommand{\comment}[2]{
-% Comment Title
-\subsection[\small COMENTARIO (#1)]{
-	\centering{\normalsize{\normalfont{
-		COMENTARIO (#1)
-}}}
+%	Comment Title
+\subsection[\fontsize{8pt}{5pt}\selectfont COMENTARIO (#1)]{
+\centering{\normalsize{\normalfont{
+COMENTARIO (#1)
+			}
+		}
+	}
 }
-% Comment Text
+%	Comment Text
 \justifying
 \small{
-	\textit{
+\textit{
 \hspace{4pt} #2
+		}
+	}
+\vspace{-3pt}
+}
+
+% Subcomments
+\newcommand{\subcomment}[1]{
+\centering
+\vspace{3pt}
+\small{
+\textit{
+#1
 		}
 	}
 }
 
-\newcommand{\subcomment}[1]{
-\centering
-\small{
-	\textit{
-#1
-	}
-}
-% command
-}
-
+% Comment footnotes
 \newcommand{\commentfoot}[2]{
 \begin{center}
 {\textit{NOTA #1.- #2}}
 \end{center}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Options and Looks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\cftbeforetoctitleskip}{1em}
+
+% Only print section numbers on the TOC
+\setcounter{secnumdepth}{0}
+
+% Change TOC title
+\renewcommand{\contentsname}{Índice}
+
 % Define page margins
 \usepackage{geometry}
  \geometry{
- a5paper,
- left=20mm,
- right=20mm,
- top=15mm,
+ a6paper,
+ left=12.5mm,
+ right=12.5mm,
+ top=7.5mm,
+ bottom=13mm,
  }
 
 % Set font
@@ -110,28 +142,38 @@
 \fancyfoot{}
 
 % Set title, date and author
-\title{\raggedright \fontsize{60pt}{50pt}\selectfont El Libro de las Mentiras}
+\title{\raggedright \fontsize{45pt}{40pt}\selectfont El Libro de las Mentiras}
 \date{}
 \author{}
 
-% Begin document
-\begin{document}
-\pagenumbering{gobble}
-\maketitle
-\newpage
-\renewcommand{\headrulewidth}{0pt}
-\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%
+% Document Start %
+%%%%%%%%%%%%%%%%%%
 
+\begin{document}
+% Makes title plage
+\maketitle
+
+\renewcommand{\headrulewidth}{0pt}
+
+\signbox{?}
+
+\signbox{!}
+
+% Align text to left
 \raggedright
 \normalsize{Mentiras Título original: The Book of Lies: Which is also Falsely
 Called BREAKS.The Wanderings or Falsifications of the One Thought of Frater
 Perdurabo, which Thought is itself Untrue. Liber CCCXXXIII [Book 333]}
 
+% TOC
 \tableofcontents
+% Define TOC Title
 \addtocontents{toc}{\vspace{-1.25cm}}
 
 \newpage
 
+% Add page number to each page
 \cfoot{\thepage}
 
 \centering{%
@@ -143,40 +185,45 @@ Silencio, Nuit, O;Ra-Hoor-Khuit, Yo.}}
 \small{
 LA ANTEPRIMIGENIA TRÍADA QUE ES\\
 EL NO-DIOS
-\spacingb
+\spacinga
 Nada es.\\
 Nada se hace.\\
 Nada es no.
+%
 \spacingc
 LA PRIMERA TRÍADA QUE ES EL DIOS
-\spacingb
+\spacinga
 Yo revelo la Palabra.\\
 Yo escucho la Palabra.
+%
 \spacingc
 EL ABISMO
-\spacingb
+\spacinga
 La palabra se ha roto\\
 Sea el conocimiento.\\
 El conocimiento es la Narración.\\
 Estos fragmentos son Creación.\\
 La fisura manifiesta la luz.\footnote[2]{%
 Lo No Fragmentado, que todo lo integra, se llama Oscuridad.}
+%
 \spacingc
 LA SEGUNDA TRÍADA QUE ES EL DIOS
-\spacingb
+\spacinga
 DIOS Padre y Madre, oculta en la Generación.\\
 DIOS oculto en la energía rotante de la Naturaleza.\\
 DIOS manifestado en el hacemiento: armonía:\\
 consideración: el espejo del Sol y del Corazón
+%
 \spacingc
 LA TERCERA TRÍADA QUE ES EL DIOS
-\spacingb
+\spacinga
 Paciencia: preparación.\\
 Incertidumbre: fluyente, centelleante.\\
 Estabilidad: procreación.
+%
 \spacingc
 LA DÉCIMA EMANACIÓN
-\spacingb
+\spacinga
 El Mundo.}}
 
 \newpage
@@ -194,8 +241,6 @@ también se refiere a KTEIS PHALLOS y SPERMA; es la exclamación que
 expresa la maravilla o el éxtasis, que son la naturaleza final de las cosas.
 }
 
-\cspacing
-
 \comment{La Antiprimigenia Tríada}{
 Esta es la Trinidad negativa; sus tres manifestaciones, son en última
 instancia, idénticas. Armonizan el Ser, el Devenir y el No-Ser. los tres
@@ -212,6 +257,8 @@ Se advertirá que esta cosmogonía es muy completa; incluso la
 manifestación de Dios no aparece hasta Tiphareth; y el universo mismo
 hasta Malkuth.
 }
+
+\vspace{-1.25pt}
 
 \subcomment{
 El capítulo puede considerarse, por lo tanto, como el tratado sobre la
@@ -317,7 +364,7 @@ es la número 1, de nuevo en conexión todos estos símbolos con el Falo.
 
 \seccion{3}{Γ}
 {LA OSTRA}{
-Los Hermanos de A .·. A.·. son uno con la Madre del Niño\footnotemark[4].\\
+Los Hermanos de A.·.A.·. son uno con la Madre del Niño\footnotemark[4].\\
 La Multitud es tan adorable para el Uno como el Uno lo es
 \begin{indent1}
 para la Multitud. He aquí el Amor de estos; el parto-creación\\
@@ -328,11 +375,22 @@ El Todo, así tramado de estos, es la Gloria.\\
 La Nada está más allá de la Gloria.\\
 El Hombre se deleita en la unión con la Mujer; la Mujer,\indenta
 en desprenderse del niño.\\
-Los Hermanos de A.·. A.·. son Mujeres; los aspirantes a\\
-A.·. A.·., hombres.
+Los Hermanos de A.·.A.·. son Mujeres; los aspirantes a\\
+A.·.A.·., hombres.
 }
 
 \newpage
+
+\comment{Γ}{
+Gimel es la Gran Sacerdotisa del Tarot. Este capítulo ofrece
+un punto de vista de las féminas iniciadas; se titula, por lo
+tanto, la Ostra, un simbolo del Yoni. En el {\normalfont{Equinoccio X}},
+el Templo del Rey Salomón, se explica cómo los maestros del Templo,
+o Hermanos de A.·. A.·. han variado la fórmula de sus progresos. Estas
+dos {\normalfont{formulae}}, Solve et Coagula, se explican aquí, y el
+universo se presenta como la interacción entre ellas dos. Esto también
+explica la manifestación del {\normalfont{Libro de la Ley, I, 28-30}}.
+}
 
 \commentfoot{4}{Ellos hacen que todos los hombres lo adoren.
 }
